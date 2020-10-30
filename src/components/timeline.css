@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'NineteenNinetySeven';
+  src: url('/fonts/NineteenNinetySeven-11XB.ttf');
+}
+
+.text-content {
+  font-family: 'NineteenNinetySeven';
+}
