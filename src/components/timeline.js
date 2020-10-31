@@ -40,14 +40,13 @@ export default function Timeline(props) {
 const styles = {
   verticalTimelineElement: {
     fontFamily: 'NineteenNinetySeven',
+    color: '#E5E9F0',
   },
   contentStyle: {
     background: '#3B4252',
-    color: '#E5E9F0',
-    boxShadow: '0 0 #D5F3FE',
     border: '6px solid #E5E9F0',
   },
   contentArrowStyle: {
-    border: '12px solid #E5E9F0',
+    borderRight: '18px solid #E5E9F0',
   },
 };
