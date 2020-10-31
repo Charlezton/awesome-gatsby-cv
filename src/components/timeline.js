@@ -9,17 +9,18 @@ import './timeline.css';
 export default function Timeline(props) {
   return (
     <VerticalTimeline>
-      {props.entries.map(entry => {
+      {props.entries.map((entry, index) => {
         return (
           <VerticalTimelineElement
+            key={index}
             contentStyle={{
-              background: '#66D3FA',
-              color: '#0F5298',
+              background: '#3B4252',
+              color: '#E5E9F0',
               boxShadow: '0 0 #D5F3FE',
-              border: '2px solid #0F5298',
+              border: '6px solid #E5E9F0',
             }}
             contentArrowStyle={{
-              borderRight: '10px solid #0F5298',
+              border: '12px solid #E5E9F0',
             }}
             date={entry.date}
             dateClassName="text-content"
@@ -27,8 +28,11 @@ export default function Timeline(props) {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              backgroundColor: entry.icon.backgroundColor,
             }}
-            icon={<img src={entry.icon} style={{ width: '70%' }} alt="Logo" />}
+            icon={
+              <img src={entry.icon.image} style={{ width: '70%' }} alt="Logo" />
+            }
           >
             <h1 className="vertical-timeline-element-title text-content">
               {entry.title}
