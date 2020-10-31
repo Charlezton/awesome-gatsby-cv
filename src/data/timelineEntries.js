@@ -1,7 +1,5 @@
 import rubyImage from '../images/ruby.png';
 
-console.log(typeof rubyImage);
-
 const entries = [
   {
     title: 'Ruby... my first love',
