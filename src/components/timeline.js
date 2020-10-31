@@ -3,8 +3,9 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
-import './timeline.css';
+import TimelineEntry from './timelineEntry';
+import TimelineIcon from './timelineIcon';
+import '../global.css';
 
 export default function Timeline(props) {
   return (
@@ -13,37 +14,40 @@ export default function Timeline(props) {
         return (
           <VerticalTimelineElement
             key={index}
-            contentStyle={{
-              background: '#3B4252',
-              color: '#E5E9F0',
-              boxShadow: '0 0 #D5F3FE',
-              border: '6px solid #E5E9F0',
-            }}
-            contentArrowStyle={{
-              border: '12px solid #E5E9F0',
-            }}
+            contentStyle={styles.contentStyle}
+            contentArrowStyle={styles.contentArrowStyle}
             date={entry.date}
-            dateClassName="text-content"
-            iconStyle={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              backgroundColor: entry.icon.backgroundColor,
-            }}
+            style={styles.verticalTimelineElement}
             icon={
-              <img src={entry.icon.image} style={{ width: '70%' }} alt="Logo" />
+              <TimelineIcon
+                image={entry.icon.image}
+                backgroundColor={entry.icon.backgroundColor}
+              />
             }
           >
-            <h1 className="vertical-timeline-element-title text-content">
-              {entry.title}
-            </h1>
-            <h4 className="vertical-timeline-element-subtitle text-content">
-              {entry.subtitle}
-            </h4>
-            <p className="text-content">{entry.description}</p>
+            <TimelineEntry
+              title={entry.title}
+              subtitle={entry.subtitle}
+              description={entry.description}
+            />
           </VerticalTimelineElement>
         );
       })}
     </VerticalTimeline>
   );
 }
+
+const styles = {
+  verticalTimelineElement: {
+    fontFamily: 'NineteenNinetySeven',
+  },
+  contentStyle: {
+    background: '#3B4252',
+    color: '#E5E9F0',
+    boxShadow: '0 0 #D5F3FE',
+    border: '6px solid #E5E9F0',
+  },
+  contentArrowStyle: {
+    border: '12px solid #E5E9F0',
+  },
+};
