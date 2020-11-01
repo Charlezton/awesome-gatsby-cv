@@ -21,7 +21,6 @@ const styles = {
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
   },
-  /* Place text in the middle of the image */
   textContentWrapper: {
     display: 'flex',
     flexDirection: 'column',
