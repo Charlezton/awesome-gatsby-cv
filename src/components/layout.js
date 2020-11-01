@@ -7,6 +7,5 @@ export default function Layout({ children }) {
 const styles = {
   layout: {
     backgroundColor: '#2e3440',
-    color: 'white',
   },
 };
