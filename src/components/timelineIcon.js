@@ -5,23 +5,23 @@ export default function TimelineIcon(props) {
     <div
       style={{
         backgroundColor: props.backgroundColor,
-        ...styles.timelineIconWrapper,
+        ...styles.iconWrapper,
       }}
     >
-      <img src={props.image} style={styles.timelineIcon} alt="logo" />
+      <img src={props.image} style={styles.icon} alt="logo" />
     </div>
   );
 }
 
 const styles = {
-  timelineIconWrapper: {
+  iconWrapper: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     height: '100%',
     borderRadius: '50%',
   },
-  timelineIcon: {
+  icon: {
     width: '70%',
   },
 };
