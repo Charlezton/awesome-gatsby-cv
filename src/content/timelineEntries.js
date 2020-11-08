@@ -1,4 +1,4 @@
-import rubyImage from '../images/ruby.png';
+import rubyImage from './ruby.png';
 
 const entries = [
   {

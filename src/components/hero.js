@@ -1,15 +1,15 @@
 import React from 'react';
-import tech from '../images/tech.jpg';
+import Img from 'gatsby-image';
 
 export default function Hero(props) {
   return (
     <div style={styles.hero}>
+      <Img style={styles.image} fluid={props.image.fluid} />
       <div style={styles.textContentWrapper}>
         <h1 style={styles.title}>{props.title}</h1>
         <p style={styles.description}>{props.description}</p>
         {/* <button>{props.buttonText}</button> */}
       </div>
-      <img style={styles.image} src={tech} alt="keyboard" />
     </div>
   );
 }
