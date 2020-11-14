@@ -1,4 +1,5 @@
 import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -7,36 +8,78 @@ import TimelineEntry from './timelineEntry';
 import TimelineIcon from './timelineIcon';
 import '../global.css';
 
-export default function Timeline(props) {
+export default function Timeline() {
   return (
-    <VerticalTimeline>
-      {props.entries.map((entry, index) => {
-        return (
-          <VerticalTimelineElement
-            key={index}
-            contentStyle={styles.contentStyle}
-            contentArrowStyle={styles.contentArrowStyle}
-            date={entry.date}
-            style={styles.verticalTimelineElement}
-            icon={
-              <TimelineIcon
-                image={props.images.find(
-                  image =>
-                    image.node.fixed.originalName.indexOf(entry.icon.image) > -1
-                )}
-                backgroundColor={entry.icon.backgroundColor}
-              />
+    <StaticQuery
+      query={graphql`
+        query TimelineQuery {
+          allImages: allImageSharp {
+            edges {
+              node {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                  originalName
+                }
+              }
             }
-          >
-            <TimelineEntry
-              title={entry.title}
-              subtitle={entry.subtitle}
-              description={entry.description}
-            />
-          </VerticalTimelineElement>
-        );
-      })}
-    </VerticalTimeline>
+          }
+          timelineEntries: allFile(
+            filter: { name: { eq: "timelineEntries" } }
+          ) {
+            edges {
+              node {
+                childContentJson {
+                  entries {
+                    title
+                    subtitle
+                    description
+                    date
+                    icon {
+                      image
+                      backgroundColor
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={data => (
+        <VerticalTimeline>
+          {data.timelineEntries.edges[0].node.childContentJson.entries.map(
+            (entry, index) => {
+              return (
+                <VerticalTimelineElement
+                  key={index}
+                  contentStyle={styles.contentStyle}
+                  contentArrowStyle={styles.contentArrowStyle}
+                  date={entry.date}
+                  style={styles.verticalTimelineElement}
+                  icon={
+                    <TimelineIcon
+                      image={data.allImages.edges.find(
+                        image =>
+                          image.node.fluid.originalName.indexOf(
+                            entry.icon.image
+                          ) > -1
+                      )}
+                      backgroundColor={entry.icon.backgroundColor}
+                    />
+                  }
+                >
+                  <TimelineEntry
+                    title={entry.title}
+                    subtitle={entry.subtitle}
+                    description={entry.description}
+                  />
+                </VerticalTimelineElement>
+              );
+            }
+          )}
+        </VerticalTimeline>
+      )}
+    />
   );
 }
 

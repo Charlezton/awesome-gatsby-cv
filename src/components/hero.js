@@ -1,16 +1,40 @@
 import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-export default function Hero(props) {
+export default function Hero() {
   return (
-    <div style={styles.hero}>
-      <Img style={styles.image} fluid={props.image.fluid} />
-      <div style={styles.textContentWrapper}>
-        <h1 style={styles.title}>{props.title}</h1>
-        <p style={styles.description}>{props.description}</p>
-        {/* <button>{props.buttonText}</button> */}
-      </div>
-    </div>
+    <StaticQuery
+      query={graphql`
+        query HeroQuery {
+          heroImage: file(relativePath: { eq: "tech.jpg" }) {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          heroTextContent: contentJson {
+            title
+            description
+            buttonText
+          }
+        }
+      `}
+      render={data => (
+        <div style={styles.hero}>
+          <Img
+            style={styles.image}
+            fluid={data.heroImage.childImageSharp.fluid}
+          />
+          <div style={styles.textContentWrapper}>
+            <h1 style={styles.title}>{data.heroTextContent.title}</h1>
+            <p style={styles.description}>{data.heroTextContent.description}</p>
+            {/* <button>{data.heroTextContent.buttonText}</button> */}
+          </div>
+        </div>
+      )}
+    />
   );
 }
 
