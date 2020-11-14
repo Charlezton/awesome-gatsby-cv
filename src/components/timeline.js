@@ -20,7 +20,10 @@ export default function Timeline(props) {
             style={styles.verticalTimelineElement}
             icon={
               <TimelineIcon
-                image={entry.icon.image}
+                image={props.images.find(
+                  image =>
+                    image.node.fixed.originalName.indexOf(entry.icon.image) > -1
+                )}
                 backgroundColor={entry.icon.backgroundColor}
               />
             }

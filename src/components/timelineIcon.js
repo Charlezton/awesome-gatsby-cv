@@ -1,6 +1,8 @@
 import React from 'react';
+import Img from 'gatsby-image';
 
 export default function TimelineIcon(props) {
+  console.log(props);
   return (
     <div
       style={{
@@ -8,7 +10,7 @@ export default function TimelineIcon(props) {
         ...styles.iconWrapper,
       }}
     >
-      <img src={props.image} style={styles.icon} alt="logo" />
+      <Img style={styles.icon} fixed={props.image.node.fixed} />
     </div>
   );
 }

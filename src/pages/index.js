@@ -3,28 +3,28 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import Timeline from '../components/timeline';
 import Hero from '../components/hero';
-import timelineEntries from '../content/timelineEntries';
 
 export default function Home({ data }) {
   return (
     <Layout>
       <Hero
-        image={data.file.heroImage}
+        image={data.heroImage.childImageSharp}
         title={data.heroTextContent.title}
         description={data.heroTextContent.description}
         buttonText={data.heroTextContent.buttonText}
       />
-      <Timeline entries={timelineEntries} />
+      <Timeline
+        entries={data.timelineEntries.edges[0].node.childContentJson.entries}
+        images={data.allImages.edges}
+      />
     </Layout>
   );
 }
 
 export const query = graphql`
-  query HeroContent {
-    file(relativePath: { eq: "tech.jpg" }) {
-      heroImage: childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
+  query PageContent {
+    heroImage: file(relativePath: { eq: "tech.jpg" }) {
+      childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
         }
@@ -34,6 +34,34 @@ export const query = graphql`
       title
       description
       buttonText
+    }
+    allImages: allImageSharp {
+      edges {
+        node {
+          fixed(width: 100) {
+            ...GatsbyImageSharpFixed
+            originalName
+          }
+        }
+      }
+    }
+    timelineEntries: allFile(filter: { name: { eq: "timelineEntries" } }) {
+      edges {
+        node {
+          childContentJson {
+            entries {
+              title
+              subtitle
+              description
+              date
+              icon {
+                image
+                backgroundColor
+              }
+            }
+          }
+        }
+      }
     }
   }
 `;
