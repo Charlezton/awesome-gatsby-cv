@@ -7,14 +7,14 @@ export default function Hero() {
     <StaticQuery
       query={graphql`
         query HeroQuery {
-          heroImage: file(relativePath: { eq: "tech.jpg" }) {
+          heroImage: file(relativePath: { eq: "hero/tech.jpg" }) {
             childImageSharp {
               fluid {
                 ...GatsbyImageSharpFluid
               }
             }
           }
-          heroTextContent: contentJson {
+          heroTextContent: heroJson {
             title
             description
             buttonText

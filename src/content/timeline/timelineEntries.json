@@ -7,7 +7,7 @@
         "At my 18th birthday my dad bought me a book called 'Learn to Program' by Chris Pine. Having had an interest in computers and video games since an early age I wanted to explore the world of programming, curious if it was something I would enjoy. And that is how I got to know Ruby...",
       "date": "2010",
       "icon": {
-        "image": "ruby",
+        "imageName": "ruby",
         "backgroundColor": "#028baa"
       }
     },
@@ -17,7 +17,7 @@
       "description": "awdawdawd",
       "date": "2011-2015",
       "icon": {
-        "image": "ruby",
+        "imageName": "ruby",
         "backgroundColor": "#028baa"
       }
     },
@@ -27,7 +27,7 @@
       "description": "awdawdawd",
       "date": "2013-2014",
       "icon": {
-        "image": "ruby",
+        "imageName": "ruby",
         "backgroundColor": "#028baa"
       }
     },
@@ -37,7 +37,7 @@
       "description": "awdawdawd",
       "date": "2015-2018",
       "icon": {
-        "image": "ruby",
+        "imageName": "ruby",
         "backgroundColor": "#028baa"
       }
     },
@@ -47,7 +47,7 @@
       "description": "awdawdawd",
       "date": "2019-2020",
       "icon": {
-        "image": "ruby",
+        "imageName": "ruby",
         "backgroundColor": "#028baa"
       }
     },
@@ -57,7 +57,7 @@
       "description": "awdawdawd",
       "date": "2021-present",
       "icon": {
-        "image": "ruby",
+        "imageName": "ruby",
         "backgroundColor": "#028baa"
       }
     }

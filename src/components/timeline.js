@@ -13,33 +13,27 @@ export default function Timeline() {
     <StaticQuery
       query={graphql`
         query TimelineQuery {
-          allImages: allImageSharp {
-            edges {
-              node {
+          timelineImages: allFile(
+            filter: { relativePath: { regex: "/timeline/" } }
+          ) {
+            nodes {
+              name
+              childImageSharp {
                 fluid {
                   ...GatsbyImageSharpFluid
-                  originalName
                 }
               }
             }
           }
-          timelineEntries: allFile(
-            filter: { name: { eq: "timelineEntries" } }
-          ) {
-            edges {
-              node {
-                childContentJson {
-                  entries {
-                    title
-                    subtitle
-                    description
-                    date
-                    icon {
-                      image
-                      backgroundColor
-                    }
-                  }
-                }
+          timelineContent: timelineJson {
+            entries {
+              title
+              subtitle
+              description
+              date
+              icon {
+                imageName
+                backgroundColor
               }
             }
           }
@@ -47,36 +41,31 @@ export default function Timeline() {
       `}
       render={data => (
         <VerticalTimeline>
-          {data.timelineEntries.edges[0].node.childContentJson.entries.map(
-            (entry, index) => {
-              return (
-                <VerticalTimelineElement
-                  key={index}
-                  contentStyle={styles.contentStyle}
-                  contentArrowStyle={styles.contentArrowStyle}
-                  date={entry.date}
-                  style={styles.verticalTimelineElement}
-                  icon={
-                    <TimelineIcon
-                      image={data.allImages.edges.find(
-                        image =>
-                          image.node.fluid.originalName.indexOf(
-                            entry.icon.image
-                          ) > -1
-                      )}
-                      backgroundColor={entry.icon.backgroundColor}
-                    />
-                  }
-                >
-                  <TimelineEntry
-                    title={entry.title}
-                    subtitle={entry.subtitle}
-                    description={entry.description}
+          {data.timelineContent.entries.map((entry, index) => {
+            return (
+              <VerticalTimelineElement
+                key={index}
+                contentStyle={styles.contentStyle}
+                contentArrowStyle={styles.contentArrowStyle}
+                date={entry.date}
+                style={styles.verticalTimelineElement}
+                icon={
+                  <TimelineIcon
+                    image={data.timelineImages.nodes.find(
+                      image => image.name === entry.icon.imageName
+                    )}
+                    backgroundColor={entry.icon.backgroundColor}
                   />
-                </VerticalTimelineElement>
-              );
-            }
-          )}
+                }
+              >
+                <TimelineEntry
+                  title={entry.title}
+                  subtitle={entry.subtitle}
+                  description={entry.description}
+                />
+              </VerticalTimelineElement>
+            );
+          })}
         </VerticalTimeline>
       )}
     />

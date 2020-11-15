@@ -9,7 +9,7 @@ export default function TimelineIcon(props) {
         ...styles.iconWrapper,
       }}
     >
-      <Img style={styles.icon} fluid={props.image.node.fluid} />
+      <Img style={styles.icon} fluid={props.image.childImageSharp.fluid} />
     </div>
   );
 }
