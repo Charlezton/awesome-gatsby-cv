@@ -1,6 +1,36 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import styled from 'styled-components';
+
+const HeroWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const BackgroundImage = styled(Img)`
+  height: 100vh;
+  width: 100%;
+`;
+
+const TextContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: NineteenNinetySeven;
+  color: #e5e9f0;
+  position: absolute;
+`;
+
+const Title = styled.h1`
+  font-size: 5em;
+`;
+
+const Description = styled.p`
+  font-size: 2em;
+`;
 
 export default function Hero() {
   return (
@@ -22,45 +52,14 @@ export default function Hero() {
         }
       `}
       render={data => (
-        <div style={styles.hero}>
-          <Img
-            style={styles.image}
-            fluid={data.heroImage.childImageSharp.fluid}
-          />
-          <div style={styles.textContentWrapper}>
-            <h1 style={styles.title}>{data.heroTextContent.title}</h1>
-            <p style={styles.description}>{data.heroTextContent.description}</p>
-            {/* <button>{data.heroTextContent.buttonText}</button> */}
-          </div>
-        </div>
+        <HeroWrapper>
+          <BackgroundImage fluid={data.heroImage.childImageSharp.fluid} />
+          <TextContentWrapper>
+            <Title>{data.heroTextContent.title}</Title>
+            <Description>{data.heroTextContent.description}</Description>
+          </TextContentWrapper>
+        </HeroWrapper>
       )}
     />
   );
 }
-
-const styles = {
-  hero: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  textContentWrapper: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    fontFamily: 'NineteenNinetySeven',
-    color: '#E5E9F0',
-    position: 'absolute',
-  },
-  title: {
-    fontSize: '5em',
-  },
-  description: {
-    fontSize: '2em',
-  },
-  image: {
-    height: '100vh',
-    width: '100%',
-  },
-};
