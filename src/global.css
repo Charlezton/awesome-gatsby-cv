@@ -2,3 +2,7 @@
   src: url('/fonts/NineteenNinetySeven-11XB.ttf');
   font-family: 'NineteenNinetySeven';
 }
+
+body {
+  margin: 0px;
+}
