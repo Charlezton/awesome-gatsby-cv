@@ -19,7 +19,7 @@ export default function Timeline() {
             nodes {
               name
               childImageSharp {
-                fluid {
+                fluid(maxWidth: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }
