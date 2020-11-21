@@ -26,10 +26,26 @@ const TextContentWrapper = styled.div`
 
 const Title = styled.h1`
   font-size: 5em;
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    font-size: 4em;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2em;
+  }
 `;
 
 const Description = styled.p`
   font-size: 2em;
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    font-size: 2em;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1em;
+  }
 `;
 
 export default function Hero() {
