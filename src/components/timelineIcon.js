@@ -8,6 +8,7 @@ const IconWrapper = styled.div`
   justify-content: center;
   height: 100%;
   border-radius: 50%;
+  background-color: ${props => props.backgroundColor};
 `;
 
 const Icon = styled(Img)`
@@ -16,11 +17,7 @@ const Icon = styled(Img)`
 
 export default function TimelineIcon(props) {
   return (
-    <IconWrapper
-      style={{
-        backgroundColor: props.backgroundColor,
-      }}
-    >
+    <IconWrapper backgroundColor={props.backgroundColor}>
       <Icon fluid={props.image.childImageSharp.fluid} />
     </IconWrapper>
   );
