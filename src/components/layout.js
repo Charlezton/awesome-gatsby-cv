@@ -1,11 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Background = styled.div`
+  background-color: #2e3440;
+`;
 
 export default function Layout({ children }) {
-  return <div style={styles.layout}>{children}</div>;
+  return <Background>{children}</Background>;
 }
-
-const styles = {
-  layout: {
-    backgroundColor: '#2e3440',
-  },
-};

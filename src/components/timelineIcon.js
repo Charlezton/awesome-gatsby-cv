@@ -1,28 +1,27 @@
 import React from 'react';
 import Img from 'gatsby-image';
+import styled from 'styled-components';
+
+const IconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border-radius: 50%;
+`;
+
+const Icon = styled(Img)`
+  width: 70%;
+`;
 
 export default function TimelineIcon(props) {
   return (
-    <div
+    <IconWrapper
       style={{
         backgroundColor: props.backgroundColor,
-        ...styles.iconWrapper,
       }}
     >
-      <Img style={styles.icon} fluid={props.image.childImageSharp.fluid} />
-    </div>
+      <Icon fluid={props.image.childImageSharp.fluid} />
+    </IconWrapper>
   );
 }
-
-const styles = {
-  iconWrapper: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100%',
-    borderRadius: '50%',
-  },
-  icon: {
-    width: '70%',
-  },
-};
