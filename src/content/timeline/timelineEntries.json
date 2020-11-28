@@ -1,10 +1,32 @@
 {
   "entries": [
     {
-      "title": "Ruby... my first love",
-      "subtitle": "Senior highschool",
+      "title": "Hello, World!",
+      "subtitle": "A child is born",
       "description":
-        "At my 18th birthday my dad bought me a book called 'Learn to Program' by Chris Pine. Having had an interest in computers and video games since an early age I wanted to explore the world of programming, curious if it was something I would enjoy. And that is how I got to know Ruby...",
+        "I was born and raised in the suburbs of Stockholm, Sweden.",
+      "date": "1992",
+      "icon": {
+        "imageName": "ruby",
+        "backgroundColor": "#028baa"
+      }
+    },
+    {
+      "title": "Life is good!",
+      "subtitle": "Video games, computers and heavy metal",
+      "description":
+        "I spend my time playing video games, fiddling with computers and soon enough listening to heavy metal.",
+      "date": "1995-2010",
+      "icon": {
+        "imageName": "ruby",
+        "backgroundColor": "#028baa"
+      }
+    },
+    {
+      "title": "Curious beginnings",
+      "subtitle": "Learned Ruby, senior high school",
+      "description":
+        "On my 18th birthday my dad bought me a book called 'Learn to Program' by Chris Pine. I wished to explore the world of programming, curious if it was something I would enjoy. It sure was!",
       "date": "2010",
       "icon": {
         "imageName": "ruby",
@@ -12,29 +34,29 @@
       }
     },
     {
-      "title": "BA in computer science",
-      "subtitle": "Stockholm University",
-      "description": "awdawdawd",
+      "title": "To a certain degree...",
+      "subtitle": "BA in computer science, Stockholm University",
+      "description": "After senior high school I kept on developing ( hah! ) my skills. I spent two years studying, worked for one year and then resumed and finished my BA degree in computer science.",
       "date": "2011-2015",
       "icon": {
-        "imageName": "ruby",
+        "imageName": "diploma",
         "backgroundColor": "#028baa"
       }
     },
     {
-      "title": "IT-Support",
-      "subtitle": "Viktor Rydberg Djursholm",
-      "description": "awdawdawd",
+      "title": "Have you tried turning it off and on again?",
+      "subtitle": "IT-Support, Viktor Rydberg Djursholm",
+      "description": "In between my second and third year at Stockholm Univerity I worked at my old junior high school as IT-Support. I helped the teachers and students when IT related problems arose. I also handled the warranty and insurance cases for all 1,000 computers on school premise.",
       "date": "2013-2014",
       "icon": {
-        "imageName": "ruby",
+        "imageName": "support",
         "backgroundColor": "#028baa"
       }
     },
     {
-      "title": "Developer",
-      "subtitle": "SWECO",
-      "description": "awdawdawd",
+      "title": "My first developer job",
+      "subtitle": "Developer and Project Manager, Sweco",
+      "description": "My role description was frontend developer but I quickly took on backend assignments as well since I had experience in e.g. PHP, Java and C++ from university. Besides that I worked as Project Manager in some projects which meant communicating with stakeholders and managing tasks.",
       "date": "2015-2018",
       "icon": {
         "imageName": "ruby",
@@ -42,8 +64,17 @@
       }
     },
     {
-      "title": "Senior Developer",
-      "subtitle": "Digitalent",
+      "title": "Qoute from my manager at Sweco",
+      "description": "\"Carl is driven, methodical, maintains high quality in all his commitments and has acted very professionally in all his assignments.\"",
+      "date": "2018",
+      "icon": {
+        "imageName": "ruby",
+        "backgroundColor": "#028baa"
+      }
+    },
+    {
+      "title": "Moving up to senior",
+      "subtitle": "Senior Developer, Digitalent",
       "description": "awdawdawd",
       "date": "2019-2020",
       "icon": {
@@ -52,8 +83,8 @@
       }
     },
     {
-      "title": "Tech Lead",
-      "subtitle": "Mindler",
+      "title": "Next stop: Tech Lead",
+      "subtitle": "Tech Lead, Mindler",
       "description": "awdawdawd",
       "date": "2021-present",
       "icon": {
