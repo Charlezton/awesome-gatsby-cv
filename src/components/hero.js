@@ -13,6 +13,7 @@ const HeroWrapper = styled.div`
 const BackgroundImage = styled(Img)`
   height: 100vh;
   width: 100%;
+  border-bottom: 4px solid #e5e9f0;
 `;
 
 const TextContentWrapper = styled.div`
