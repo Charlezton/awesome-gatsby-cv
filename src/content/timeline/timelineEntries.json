@@ -15,7 +15,7 @@
       "title": "Life is good!",
       "subtitle": "Video games, computers and heavy metal",
       "description":
-        "I spend my time playing video games, fiddling with computers and soon enough listening to heavy metal.",
+        "I spent my time playing video games, fiddling with computers and soon enough listening to heavy metal.",
       "date": "1995-2010",
       "icon": {
         "imageName": "ruby",
@@ -46,7 +46,7 @@
     {
       "title": "Have you tried turning it off and on again?",
       "subtitle": "IT Support, Viktor Rydberg Djursholm",
-      "description": "In between my second and third year at Stockholm Univerity I worked at my old junior high school as an IT Support. I gained some experience in managing stressful situations as well as \"Imaginative ways you can damage a computer\". Note to self, milkshakes and computers do not go together...",
+      "description": "In between my second and third year at Stockholm Univerity I worked at my old junior high school as an IT Support. I gained some experience in managing stressful situations as well as \"Imaginative ways you can damage a computer\". Here's a tip, milkshakes and computers do not go together...",
       "date": "2013-2014",
       "icon": {
         "imageName": "support",
@@ -56,7 +56,7 @@
     {
       "title": "I want it all!",
       "subtitle": "Developer and Project Manager, Sweco",
-      "description": "My role description was frontend developer but I quickly took on backend assignments as well since I had experience in e.g. PHP, Java and C++ from university. Besides that I worked as Project Manager in some projects which meant communicating with stakeholders and managing tasks.",
+      "description": "My whole experience can be described as being invited to Willy Wonka's Chocolate Factory. I could try every flavour of software development: frontend, backend, databases, operations, project management and many more.",
       "date": "2015-2018",
       "icon": {
         "imageName": "ruby",
@@ -73,10 +73,19 @@
       }
     },
     {
-      "title": "Moving up to senior",
+      "title": "Taking on padawans of my own",
       "subtitle": "Senior Developer, Digitalent",
-      "description": "awdawdawd",
+      "description": "This is where I really got to enhance my coaching skills. I mentored four junior developers in total and watched as they grew from padawans to Jedi masters (I'm such a nerd).",
       "date": "2019-2020",
+      "icon": {
+        "imageName": "ruby",
+        "backgroundColor": "#028baa"
+      }
+    },
+    {
+      "title": "Qoute from my client",
+      "description": "\"Carl is an incredible bringer of joy who could create a nice atmosphere at a funeral... In a good way.\"",
+      "date": "2020",
       "icon": {
         "imageName": "ruby",
         "backgroundColor": "#028baa"
@@ -85,7 +94,7 @@
     {
       "title": "Next stop: Tech Lead",
       "subtitle": "Tech Lead, Mindler",
-      "description": "awdawdawd",
+      "description": "My current quest",
       "date": "2021-present",
       "icon": {
         "imageName": "ruby",
