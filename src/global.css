@@ -3,6 +3,11 @@
   font-family: 'NineteenNinetySeven';
 }
 
+@font-face {
+  src: url('/fonts/SourceCodePro-Regular.ttf');
+  font-family: 'SourceCodePro';
+}
+
 body {
   margin: 0px;
 }

@@ -6,12 +6,37 @@ const TimelineEntryWrapper = styled.div`
   background: '#3B4252';
 `;
 
+const Title = styled.h1`
+  font-family: NineteenNinetySeven;
+  margin-bottom: 13px;
+  color: #00cc00;
+  text-shadow: 0 0 2px #00cc00;
+
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
+`;
+
+const SubTitle = styled.h4`
+  font-family: NineteenNinetySeven;
+  color: #00cc00;
+  text-shadow: 0 0 1px #00cc00;
+`;
+
+const Description = styled.p`
+  font-family: SourceCodePro;
+  color: #00cc00;
+  text-shadow: 0 0 2px #00cc00;
+`;
+
 export default function TimelineEntry(props) {
   return (
     <TimelineEntryWrapper>
-      <h1 className="vertical-timeline-element-title">{props.title}</h1>
-      <h4 className="vertical-timeline-element-subtitle">{props.subtitle}</h4>
-      <p>{props.description}</p>
+      <Title className="vertical-timeline-element-title">{props.title}</Title>
+      <SubTitle className="vertical-timeline-element-subtitle">
+        {props.subtitle}
+      </SubTitle>
+      <Description>{props.description}</Description>
     </TimelineEntryWrapper>
   );
 }

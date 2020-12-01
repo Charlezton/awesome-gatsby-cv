@@ -36,7 +36,7 @@
     {
       "title": "To a certain degree...",
       "subtitle": "BA in computer science, Stockholm University",
-      "description": "After senior high school I kept on developing ( hah! ) my skills. I spent two years studying, worked for one year and then resumed and finished my BA degree in computer science.",
+      "description": "After senior high school I kept on developing (hah!) my skills. I spent two years studying, worked for one year and then resumed and finished my BA degree in computer science.",
       "date": "2011-2015",
       "icon": {
         "imageName": "diploma",
@@ -94,7 +94,7 @@
     {
       "title": "Next stop: Tech Lead",
       "subtitle": "Tech Lead, Mindler",
-      "description": "My current quest",
+      "description": "My current quest.",
       "date": "2021-present",
       "icon": {
         "imageName": "ruby",

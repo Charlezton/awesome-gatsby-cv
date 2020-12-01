@@ -78,7 +78,7 @@ const styles = {
     color: '#E5E9F0',
   },
   contentStyle: {
-    background: '#3B4252',
+    background: '#0F0F23',
     border: '6px solid #E5E9F0',
   },
   contentArrowStyle: {
