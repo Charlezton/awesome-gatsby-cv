@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
-const FooterLayout = styled.div`
+const FooterWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,40 +13,30 @@ const FooterLayout = styled.div`
   width: 100%;
 `;
 
-const FooterContentWrapper = styled.div`
+const PortraitWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  height: 80%;
+  width: 60%;
+  max-height: 85%;
+  margin-right: 10px;
 `;
 
 const Portrait = styled(Img)`
-  height: 100%;
-  width: 50%;
+  width: 100%;
   border-radius: 3%;
 `;
 
-const TextContentWrapper = styled.div`
-  height: 100%;
-  width: 50%;
+const ContactInfoWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 20%;
+  height: 85%;
   margin-left: 10px;
 `;
 
-const Title = styled.h3`
-  font-family: NineteenNinetySeven;
-  color: #00cc00;
-  text-shadow: 0 0 2px #00cc00;
-`;
-
-const Description = styled.p`
-  font-family: SourceCodePro;
-  color: #00cc00;
-  text-shadow: 0 0 2px #00cc00;
-`;
-
-const Link = styled.a`
-  color: #00cc00;
+const Logo = styled(Img)`
+  width: 100%;
 `;
 
 export default function Footer() {
@@ -61,22 +51,32 @@ export default function Footer() {
               }
             }
           }
+          linkedinLogo: file(relativePath: { eq: "footer/linkedin.png" }) {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          githubLogo: file(relativePath: { eq: "footer/github.png" }) {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       `}
       render={data => (
-        <FooterLayout>
-          <FooterContentWrapper>
+        <FooterWrapper>
+          <PortraitWrapper>
             <Portrait fluid={data.footerPortrait.childImageSharp.fluid} />
-            <TextContentWrapper>
-              <Title>Get in touch with me</Title>
-              <Description>
-                <Link href="https://www.linkedin.com/in/carl-elgestad-stjernfeldt-7b23b4b2">
-                  LinkedIn
-                </Link>
-              </Description>
-            </TextContentWrapper>
-          </FooterContentWrapper>
-        </FooterLayout>
+          </PortraitWrapper>
+          <ContactInfoWrapper>
+            <Logo fluid={data.linkedinLogo.childImageSharp.fluid} />
+            <Logo fluid={data.githubLogo.childImageSharp.fluid} />
+          </ContactInfoWrapper>
+        </FooterWrapper>
       )}
     />
   );

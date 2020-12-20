@@ -9,7 +9,7 @@ const TimelineEntryWrapper = styled.div`
 const Title = styled.h1`
   font-family: NineteenNinetySeven;
   margin-bottom: 13px;
-  color: #00cc00;
+  color: #e5e9f0;
   text-shadow: 0 0 2px #00cc00;
 
   @media (max-width: 768px) {
@@ -19,13 +19,13 @@ const Title = styled.h1`
 
 const SubTitle = styled.h4`
   font-family: NineteenNinetySeven;
-  color: #00cc00;
+  color: #e5e9f0;
   text-shadow: 0 0 1px #00cc00;
 `;
 
 const Description = styled.p`
   font-family: SourceCodePro;
-  color: #00cc00;
+  color: #e5e9f0;
   text-shadow: 0 0 2px #00cc00;
 `;
 
